@@ -33,7 +33,7 @@ This CC project is our final project for Google Bangkit Academy 2024 Batch 2.
 [KidCare Machine Learning Apps Developments](https://github.com/KidCare-Capstone-Project/ML_Structuring_Model)
 
 **Mobile Development:**
-[KidCare Cloud Service](https://github.com/KidCare-Capstone-Project/MobileDev_Apps)
+[KidCare Mobile Development Apps](https://github.com/KidCare-Capstone-Project/MobileDev_Apps)
 
 **Project Background:**
 
