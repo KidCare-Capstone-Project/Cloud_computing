@@ -1,0 +1,44 @@
+{
+  "name": "kidcare",
+  "version": "1.0.0",
+  "description": "API back-end aplikasi Kidcare",
+  "main": "src/api/server.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "start-dev": "nodemon ./src/app.js",
+    "lint": "eslint ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KidCare-Capstone-Project/Cloud_computing.git"
+  },
+  "keywords": [
+    "API",
+    "Back-end",
+    "aplikasi",
+    "Kidcare"
+  ],
+  "author": "Shandy Satria Nugraha & Fitri Sri Mulyani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KidCare-Capstone-Project/Cloud_computing/issues"
+  },
+  "homepage": "https://github.com/KidCare-Capstone-Project/Cloud_computing#readme",
+  "dependencies": {
+    "@google-cloud/firestore": "^7.10.0",
+    "@hapi/hapi": "^21.3.12",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^13.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "eslint-config-dicodingacademy": "^0.9.4",
+    "globals": "^15.12.0",
+    "nodemon": "^3.1.7"
+  }
+}
