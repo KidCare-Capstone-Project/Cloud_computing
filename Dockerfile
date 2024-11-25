@@ -14,7 +14,7 @@ WORKDIR /app
 
 COPY --from=build /app/ .
 
-EXPOSE 5000
+EXPOSE 8080
 
 ENTRYPOINT ["flask"]
 CMD ["run", "--host=0.0.0.0"]
