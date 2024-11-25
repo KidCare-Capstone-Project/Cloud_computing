@@ -9,9 +9,9 @@ COPY . .
 
 ENV APP_ENV=production
 ENV APP_PORT=8080
-ENV MODEL_URL="https://storage.googleapis.com/model-deploy-mlgc/model.json"
-ENV BUCKET_NAME="kidcare-bucket"
-ENV PROJECT_ID="kidcare-2024"
+ENV MODEL_URL="secret"
+ENV BUCKET_NAME="secret"
+ENV PROJECT_ID="secret"
 EXPOSE 8080
 
 CMD [ "npm", "start" ]
