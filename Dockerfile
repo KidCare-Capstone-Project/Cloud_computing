@@ -14,7 +14,4 @@ WORKDIR /app
 
 COPY --from=build /app/ .
 
-EXPOSE 8080
-
-ENTRYPOINT ["flask"]
-CMD ["run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port", "8080"]
