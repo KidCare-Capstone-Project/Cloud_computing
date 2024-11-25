@@ -1,6 +1,26 @@
 from flask import Blueprint, request, jsonify
 import numpy as np
 import tensorflow as tf
+from datetime import datetime
+import firebase_admin
+from firebase_admin import firestore
+
+firebase_admin.initialize_app()
+
+db = firestore.client()
+
+def calculate_age_in_months(date_of_birth):
+
+    current_date = datetime.now()
+    month_difference = (current_date.year - date_of_birth.year) * 12 + (current_date.month - date_of_birth.month)
+    year_difference = current_date.year - date_of_birth.year
+    day_difference = current_date.day - date_of_birth.day
+
+    if day_difference < 0:
+        month_difference -= 1
+
+    total_age_in_months = year_difference * 12 + month_difference
+    return total_age_in_months
 
 interpreter = tf.lite.Interpreter(model_path="kidcare.tflite")
 interpreter.allocate_tensors()
@@ -13,17 +33,25 @@ def predict():
     try:
         data = request.get_json()
 
-        if 'JenisKelamin' not in data or 'Umur' not in data or 'TinggiBadan' not in data or 'BeratBadan' not in data or 'LingkarKepala' not in data:
-            return jsonify({'error': 'Semua field (JenisKelamin, Umur, TinggiBadan, BeratBadan, LingkarKepala) harus diisi'}), 400
+        if 'userId' not in data or 'anakId' not in data:
+            return jsonify({'error': 'userId dan namaAnak harus diisi'}), 400
 
-        if data['JenisKelamin'] not in ['Laki Laki', 'Perempuan']:
-            return jsonify({'error': 'JenisKelamin harus "Laki Laki" atau "Perempuan"'}), 400
+        userId = data['userId']
+        anakId = data['anakId']
 
-        jenis_kelamin = 1 if data['JenisKelamin'] == 'Laki Laki' else 0
-        umur = data['Umur']
-        tinggi_badan = data['TinggiBadan']
-        berat_badan = data['BeratBadan']
-        lingkar_kepala = data['LingkarKepala']
+        anak_ref = db.collection('users').document(userId).collection('children').document(anakId)  
+        anak = anak_ref.get().to_dict()
+
+        if not anak:
+            return jsonify({'error': f'Data anak dengan nama {anakId} tidak ditemukan'}), 404
+
+
+        jenis_kelamin = 1 if anak['gender'] == 'Laki-laki' else 0
+        tanggal_lahir = datetime.strptime(anak['birthDate'], '%d/%m/%Y')
+        umur = calculate_age_in_months(tanggal_lahir)
+        tinggi_badan = float(anak['height'])
+        berat_badan = float(anak['weight'])
+        lingkar_kepala = float(anak['headCircumference'])
 
         input_data = np.array([jenis_kelamin, umur, tinggi_badan, berat_badan, lingkar_kepala], dtype=np.float32)
         input_data = np.expand_dims(input_data, axis=0) 
@@ -39,34 +67,26 @@ def predict():
 
         classes = ["Tidak Stunting", "Stunting"]
         if len(output_data[0]) == 2:
-            predicted_class = classes[np.argmax(output_data[0])]
             probabilitas_stunting = output_data[0][1] * 100
             probabilitas_tidak_stunting = output_data[0][0] * 100
 
-            status_gizi = "Stunting" if probabilitas_stunting > probabilitas_tidak_stunting else "Tidak Stunting"
-
             return jsonify({
-                'nama_anak': data.get('Nama', 'Tidak diketahui'),
-                'usia': data['Umur'],
+                'nama_anak': anak['name'],  
+                'usia': umur,  
                 'probabilitas_stunting': f"{probabilitas_stunting:.2f}%",
                 'probabilitas_tidak_stunting': f"{probabilitas_tidak_stunting:.2f}%",
-                'status_gizi': status_gizi,
-                'prediction': predicted_class
             })
         else:
             prediction_value = output_data[0][0]
             probabilitas_stunting = prediction_value * 100 
             probabilitas_tidak_stunting = (1 - prediction_value) * 100 
 
-            status_gizi = "Stunting" if prediction_value > 0.5 else "Tidak Stunting"
 
             return jsonify({
-                'nama_anak' : data.get('Nama', 'Tidak diketahui'),
-                'usia': data['Umur'],
+                'nama_anak': anak['name'],  
+                'usia': umur,  
                 'probabilitas_stunting': f"{probabilitas_stunting:.2f}%", 
                 'probabilitas_tidak_stunting': f"{probabilitas_tidak_stunting:.2f}%", 
-                'prediction': f"{prediction_value:.4f}",
-                'status_gizi': status_gizi
             })
 
     except Exception as e:
