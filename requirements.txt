@@ -1,0 +1,4 @@
+firebase-admin==6.6.0
+Flask==3.1.0
+numpy==2.0.2
+tensorflow==2.18.0
