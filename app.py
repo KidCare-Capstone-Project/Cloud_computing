@@ -1,4 +1,3 @@
-import os
 from flask import Flask
 from component.prediction import prediction_routes
 
