@@ -13,13 +13,11 @@ def calculate_age_in_months(date_of_birth):
 
     current_date = datetime.now()
     month_difference = (current_date.year - date_of_birth.year) * 12 + (current_date.month - date_of_birth.month)
-    year_difference = current_date.year - date_of_birth.year
-    day_difference = current_date.day - date_of_birth.day
-
-    if day_difference < 0:
+    
+    if current_date.day < date_of_birth.day:  
         month_difference -= 1
 
-    total_age_in_months = year_difference * 12 + month_difference
+    total_age_in_months = month_difference
     return total_age_in_months
 
 interpreter = tf.lite.Interpreter(model_path="kidcare.tflite")
