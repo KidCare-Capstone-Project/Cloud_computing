@@ -84,9 +84,9 @@ The team will focus on developing and testing the following features:
   <img src="PATH" width="200">
 </p>
 
-## CloudRun Roadmap
+## CloudComputing RoadMaps
 - [x] [Node.js](https://nodejs.org)
-- [x] [Hapi FrameWork](https://hapi.dev)
+- [x] [Express FrameWork](https://hapi.dev)
 - [x] [Nodemon](https://www.npmjs.com/package/nodemon)
 - [x] [Eslint](https://eslint.org)
 - [x] [TensorFlow.js](https://www.tensorflow.org/js?hl=en)
