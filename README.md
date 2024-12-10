@@ -69,7 +69,7 @@ The team will focus on developing and testing the following features:
 
 ## Screenshots
 <p align="center">
-  <img src="PATH" width="200">
+  <img src="assets/Documentacion/Architecture KidCare.jpg" width="200">
 </p>
 
 <p align="center">
