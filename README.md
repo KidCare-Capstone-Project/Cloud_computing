@@ -49,9 +49,7 @@ The KID CARE application is developed with Google Cloud technology to provide wi
 
 - Cloud Storage for store unsructured storage, like foto, banner ETC.
 
-- Cloud Run for Deployment Back-End-API, Link every Services apps need.
-- 
-- 
+- Cloud Run for Deployment Machine Learning API and Payment API, Link every Services apps need.
 
 **Case:**
 
@@ -99,13 +97,15 @@ The team will focus on developing and testing the following features:
 - [x] [Artifact Registery](https://cloud.google.com/artifact-registry/docs?hl=idhttps://cloud.google.com/artifact-registry/docs?hl=id)
 
 ## Features
-- [x] Calculator stunting Back-End
+- [x] Calculator stunting
+- [x] Payment
 
 ## Requirement
-* Node.js 20 or Higher
-* TensorFlow.js
-* Nodemon
-* Hapi
+* Python 10.15.0 or Higher
+* TensorFlow Lite
+* Flask API
+* Numpay
+* Pandas
 * Google Cloud Platform
 
 
