@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img align="center" src="#" width="500"></img>
+  <img align="center" src="assets/Github/KidCare - Capstone.gif" width="500"></img>
 <br>
 KID CARE CLOUD COMPUTING README
 </h1>
