@@ -73,23 +73,14 @@ The team will focus on developing and testing the following features:
 </p>
 
 <p align="center">
-  <img src="path" width="200">
-</p>
-
-<p align="center">
-  <img src="PATH" width="200">
-</p>
-
-<p align="center">
-  <img src="PATH" width="200">
+  <img src="assets/Documentation/Architecture_ KidCare ML API.png" width="200">
 </p>
 
 ## CloudComputing RoadMaps
-- [x] [Node.js](https://nodejs.org)
-- [x] [Express FrameWork](https://hapi.dev)
-- [x] [Nodemon](https://www.npmjs.com/package/nodemon)
-- [x] [Eslint](https://eslint.org)
-- [x] [TensorFlow.js](https://www.tensorflow.org/js?hl=en)
+- [x] [Visual Studio](https://code.visualstudio.com/)
+- [x] [Ubuntu WSL](https://apps.microsoft.com/detail/9PDXGNCFSCZV?hl=neutral&gl=ID&ocid=pdpshare)
+- [x] [Flask API](https://flask.palletsprojects.com/en/stable/)
+- [x] [TensorFlow Lite](https://www.tensorflow.org/api_docs/python/tf/lite)
 - [x] [Docker](https://docs.docker.com/reference/dockerfile)
 - [x] [Google Cloud Platform](https://cloud.google.com)
 - [x] [Cloud Run](https://cloud.google.com/run?hl=en)
@@ -101,29 +92,81 @@ The team will focus on developing and testing the following features:
 - [x] Payment
 
 ## Requirement
+* Visual Studio
+* WSL Ubuntu
 * Python 10.15.0 or Higher
 * TensorFlow 
 * Flask API
 * Numpay
 * Pandas
+* venv
 * Google Cloud Platform
 
 
 ## Installation
-
-### 1. Clone this Project to your local or cloud Make sure for local use visual studio WSL Ubuntu
+### 0.1 Instal WSL Ubuntu
+### 0.2 Make A Directory At WSL Ubuntu
+```bash
+mkdir path/yourfolder
+```
+### 0.3 Open your visual studio Cd to your directory path
+```bash
+cd path/yourfolder
+```
+### 0.4 Authorize your local with data Google Cloud
+use your google account and project id
+```bash
+gcloud auth login --no-launch-browser
+```
+### 1. Clone this Project to local (Clone to your folder WSL Ubuntu) or cloud
 ```bash
 git clone https://github.com/KidCare-Capstone-Project/Cloud_computing.git
 ```
+### 2. Open the Project in your Visual Studio remote WSL ubuntu Venv and instal Python
+```bash
+sudo apt install python3.10 python3.10-venv
+```
+2.1 Active your venv
+```bash
+source .venv/bin/activate
+```
+2.2 Instal Requirements.txt
+```bash
+pip install -r requirements.txt
+```
+2.3 Run your flask run at http://127.0.0.1:5000/predict
+```bash
+flask run
+```
 
-or you can use Android Studio 
-
-File > New > Project from Version Control ...
-
-### 2. Open the Project in your Android Studio
-Open Android Studio and select open an existing project.
-
-### 3. Run Project in Android Studio
-Wait for Gradle Build to Finish and finally press the `Run > Run ‘app’`. Now the app has been installed in your phone / emulator. Make sure that you have configured your android device or emulator 
-
-## Thank You :)
+### 3 for Cloud Deployment Open CLI
+Cd to folder
+```bash
+cd Cloud_computing
+```
+Remove Line at google cloud editor at file app.py
+```bash
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+```
+Back to CLI and Enable Artifact Registery
+```bash
+gcloud services enable artifactregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com
+```
+Enable Artifact Registery
+```bash
+gcloud services enable artifactregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com
+```
+Make A Repository
+```bash
+gcloud artifacts repositories create backend --repository-format=docker --location=asia-southeast2 --async
+```
+Submit Image to Artifact Registery
+```bash
+gcloud builds submit --tag asia-southeast2-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/backend/Ml-Prediction-api:1.0.0
+```
+Deploy Your API
+```bash
+gcloud run deploy --image asia-southeast2-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/backend/Ml-Prediction-api:1.0.0
+```
+## Finish
