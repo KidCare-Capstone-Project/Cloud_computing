@@ -69,7 +69,7 @@ The team will focus on developing and testing the following features:
 
 ## Screenshots
 <p align="center">
-  <img src="assets/Documentacion/Architecture KidCare.jpg" width="200">
+  <img src="assets/Documentation/Architecture KidCare.jpg" width="200">
 </p>
 
 <p align="center">
@@ -102,7 +102,7 @@ The team will focus on developing and testing the following features:
 
 ## Requirement
 * Python 10.15.0 or Higher
-* TensorFlow Lite
+* TensorFlow 
 * Flask API
 * Numpay
 * Pandas
@@ -110,3 +110,20 @@ The team will focus on developing and testing the following features:
 
 
 ## Installation
+
+### 1. Clone this Project to your local or cloud Make sure for local use visual studio WSL Ubuntu
+```bash
+git clone https://github.com/KidCare-Capstone-Project/Cloud_computing.git
+```
+
+or you can use Android Studio 
+
+File > New > Project from Version Control ...
+
+### 2. Open the Project in your Android Studio
+Open Android Studio and select open an existing project.
+
+### 3. Run Project in Android Studio
+Wait for Gradle Build to Finish and finally press the `Run > Run ‘app’`. Now the app has been installed in your phone / emulator. Make sure that you have configured your android device or emulator 
+
+## Thank You :)
