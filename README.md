@@ -67,7 +67,7 @@ The team will focus on developing and testing the following features:
 
 - This application is expected to be an innovative solution that can help the government and society in reducing stunting rates and supporting the creation of a healthy and intelligent generation in Indonesia.
 
-## Screenshots
+## Documentation
 <p align="center">
   <img src="assets/Documentation/Architecture KidCare.jpg" width="200">
 </p>
