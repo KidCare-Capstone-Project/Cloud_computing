@@ -104,16 +104,16 @@ The team will focus on developing and testing the following features:
 
 
 ## Installation
-### 0.1 Instal WSL Ubuntu
-### 0.2 Make A Directory At WSL Ubuntu
+0.1 Instal WSL Ubuntu
+0.2 Make A Directory At WSL Ubuntu
 ```bash
 mkdir path/yourfolder
 ```
-### 0.3 Open your visual studio Cd to your directory path
+0.3 Open your visual studio Cd to your directory path
 ```bash
 cd path/yourfolder
 ```
-### 0.4 Authorize your local with data Google Cloud
+0.4 Authorize your local with data Google Cloud
 use your google account and project id
 ```bash
 gcloud auth login --no-launch-browser
