@@ -90,4 +90,4 @@ The team will focus on developing and testing the following features:
 ## Feature 
 Check our documentation
 - [x] **Machine Learning API** [Machine Learning API](https://github.com/KidCare-Capstone-Project/ML-API.git)
-- [x] **BackEnd Payment API** [At This RepositoryI](https://github.com/KidCare-Capstone-Project/Cloud_computing.git)
+- [x] **BackEnd Payment API** [At This Repository](https://github.com/KidCare-Capstone-Project/Cloud_computing.git)
