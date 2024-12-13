@@ -87,6 +87,7 @@ The team will focus on developing and testing the following features:
 - [x] [Cloud Storage](https://cloud.google.com/storage?hl=en)
 - [x] [Artifact Registery](https://cloud.google.com/artifact-registry/docs?hl=idhttps://cloud.google.com/artifact-registry/docs?hl=id)
 
-## Features check our documentation
+## Feature 
+Check our documentation
 - [x] **Machine Learning API** [Machine Learning API](https://github.com/KidCare-Capstone-Project/Cloud_computing/tree/main/MachineLearning_API)
 - [x] **BackEnd Payment API** [BackEnd_Payment_API](https://github.com/KidCare-Capstone-Project/Cloud_computing/tree/main/BackEnd_Payment_API)
