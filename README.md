@@ -69,11 +69,11 @@ The team will focus on developing and testing the following features:
 
 ## Documentation
 <p align="center">
-  <img src="assets/Documentation/Architecture KidCare.jpg" width="200">
+  <img src="assets/Documentation/Architecture KidCare.jpg" width="500">
 </p>
 
 <p align="center">
-  <img src="assets/Documentation/Architecture_ KidCare ML API.png" width="200">
+  <img src="assets/Documentation/Architecture_ KidCare ML API.png" width="500">
 </p>
 
 ## CloudComputing RoadMaps
