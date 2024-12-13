@@ -78,7 +78,10 @@ The team will focus on developing and testing the following features:
 
 ## CloudComputing RoadMaps
 - [x] [Visual Studio](https://code.visualstudio.com/)
+- [x] [Python](https://www.python.org/)
+- [x] [Node js](https://nodejs.org/en)
 - [x] [Ubuntu WSL](https://apps.microsoft.com/detail/9PDXGNCFSCZV?hl=neutral&gl=ID&ocid=pdpshare)
+- [x] [Express](https://expressjs.com/)
 - [x] [Flask API](https://flask.palletsprojects.com/en/stable/)
 - [x] [TensorFlow Lite](https://www.tensorflow.org/api_docs/python/tf/lite)
 - [x] [Docker](https://docs.docker.com/reference/dockerfile)
