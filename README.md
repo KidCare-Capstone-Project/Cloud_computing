@@ -88,8 +88,8 @@ The team will focus on developing and testing the following features:
 - [x] [Artifact Registery](https://cloud.google.com/artifact-registry/docs?hl=idhttps://cloud.google.com/artifact-registry/docs?hl=id)
 
 ## Features
-- [x] [Machine Learning API](https://github.com/KidCare-Capstone-Project/Cloud_computing/tree/main/MachineLearning_API)
-- [x] [Payment BackEnd](https://github.com/KidCare-Capstone-Project/Cloud_computing/tree/main/BackEnd_Payment_API)
+- [x] **Machine Learning API** [Machine Learning API](https://github.com/KidCare-Capstone-Project/Cloud_computing/tree/main/MachineLearning_API)
+- [x] **Payment BackEnd** [Payment BackEnd](https://github.com/KidCare-Capstone-Project/Cloud_computing/tree/main/BackEnd_Payment_API)
 
 ## Requirement
 * Visual Studio
