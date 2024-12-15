@@ -86,24 +86,3 @@ The team will focus on developing and testing the following features:
 * Visual Studio
 * Express Js
 * Node js 18 or Higher
-
-
-## Installation
-### Local Deployment Testing
-1.Clone to your local project pc or laptop
-```bash
-https://github.com/KidCare-Capstone-Project/backend-payment-gateway.git
-```
-2.Instal Depedencies
-```bash
-npm instal
-```
-3.For testing local makesure add some scripts at package json
-```bash
-"start": "node server.js",
-```
-4. Running your server at local
-```bash
-npm run start
-```
-## Finish
